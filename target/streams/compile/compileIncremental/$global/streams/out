@@ -1,0 +1,126 @@
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar: class java.lang.Object now provided by /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\.ivy2\cache\org.scala-js\scalajs-dom_sjs0.6_2.12\jars\scalajs-dom_sjs0.6_2.12-0.9.6.jar: class org.scalajs.dom.html$ now provided by /root/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.6.jar[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\.ivy2\cache\org.scala-js\scalajs-library_2.12\jars\scalajs-library_2.12-0.6.24.jar: class scala.scalajs.js.annotation.JSExport now provided by /root/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.24.jar[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.4.jar: class scala.Unit now provided by /root/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.4.jar[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Game$Key$.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Game.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Game$Status$.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Game$ball$.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Game$.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\View.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\State.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Model.class, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\target\scala-2.12\classes\pong\Action.class)[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set(C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar, C:\Users\Lenovo\.ivy2\cache\org.scala-js\scalajs-dom_sjs0.6_2.12\jars\scalajs-dom_sjs0.6_2.12-0.9.6.jar, C:\Users\Lenovo\.ivy2\cache\org.scala-js\scalajs-library_2.12\jars\scalajs-library_2.12-0.6.24.jar, C:\Users\Lenovo\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.4.jar)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala, C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala, /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 5 sources: invalidated sources (10) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 5 Scala sources to /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/target/scala-2.12/classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.17:component from component compiler for Scala 2.12.4[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.17:component from component compiler for Scala 2.12.4[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3e900732, interfacing (CompilerInterface) with Scala compiler version 2.12.4[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-Xplugin:/root/.ivy2/cache/org.scala-js/scalajs-compiler_2.12.4/jars/scalajs-compiler_2.12.4-0.6.24.jar[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes:/root/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.4.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/target/scala-2.12/classes:/root/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.24.jar:/root/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.6.jar[0m
+[0m[[33mwarn[0m] [0m/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala:7: @JSExport on objects is deprecated and will be removed in 1.0.0. Use @JSExportTopLevel instead. Note that it exports the object itself (rather than a 0-arg function returning the object), so the calling JavaScript code must be adapted.[0m
+[0m[[33mwarn[0m] [0m  (you can suppress this warning in 0.6.x by passing the option `-P:scalajs:suppressExportDeprecations` to scalac)[0m
+[0m[[33mwarn[0m] [0m@JSExport[0m
+[0m[[33mwarn[0m] [0m ^[0m
+[0m[[33mwarn[0m] [0mone warning found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 25.021077581 s[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, View, isInstanceOf, <init>, ==, clone, drawBall, drawEndGame, toString, !=, getClass, drawScore, ne, drawRacket, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala: Set(View, <init>, !=)[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala: Set(View, <init>, drawBall, drawEndGame, drawScore, drawRacket)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\View.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, View, isInstanceOf, <init>, ==, clone, drawBall, drawEndGame, toString, !=, getClass, drawScore, ne, drawRacket, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Model.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, moveBallPosition, changeScore, wait, $asInstanceOf, equals, racketPositionY, asInstanceOf, synchronized, $isInstanceOf, changeDirectionY, changeBallPosition, notifyAll, Model, isInstanceOf, moveRacket, <init>, nextPosition, ==, clone, moveBallDirectionX, toString, !=, getClass, ne, eq, ##, finalize, moveBallDirectionY, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\State.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, isGameOver, wait, $asInstanceOf, isRacketHit, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, isInstanceOf, isStoped, <init>, ==, clone, isRunning, toString, !=, getClass, State, ne, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, isGameOver, wait, $asInstanceOf, isRacketHit, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, isInstanceOf, isStoped, <init>, ==, clone, isRunning, toString, !=, getClass, State, ne, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala: Set(<init>, !=, State)[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala: Set(isGameOver, isRacketHit, isStoped, <init>, isRunning, State)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	ordering, canBuildFrom, mkOrderingOps.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] The following member ref dependencies of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala are invalidated:[0m
+[0m[[0mdebug[0m] [0m[naha] 	/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala[0m
+[0m[[0mdebug[0m] [0m[naha] 	/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala[0m
+[0m[[0mdebug[0m] [0m[naha] 	/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala[0m
+[0m[[0mdebug[0m] [0m[naha] 	/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/View.scala[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Model.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, moveBallPosition, changeScore, wait, $asInstanceOf, equals, racketPositionY, asInstanceOf, synchronized, $isInstanceOf, changeDirectionY, changeBallPosition, notifyAll, Model, isInstanceOf, moveRacket, <init>, nextPosition, ==, clone, moveBallDirectionX, toString, !=, getClass, ne, eq, ##, finalize, moveBallDirectionY, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala: Set(Model, <init>, !=)[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/State.scala: Set(racketPositionY, Model, <init>, nextPosition, ==)[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala: Set(moveBallPosition, changeScore, changeDirectionY, changeBallPosition, Model, moveRacket, <init>, moveBallDirectionX, moveBallDirectionY)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Game.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	ordering, canBuildFrom, mkOrderingOps.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(/home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Action.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, loop, $asInstanceOf, equals, computeScore, asInstanceOf, synchronized, $isInstanceOf, load, endGame, notifyAll, isInstanceOf, <init>, ==, clone, counter, toString, !=, getClass, ne, Action, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] The following modified names cause invalidation of /home/naseem/Documents/SFreely NEW/Games/Pong-SAM-Scalajs2/src/main/scala/Game.scala: Set(load, <init>, !=, Action)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating (transitively) by inheritance from C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala...[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated by transitive inheritance dependency: Set(C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] The C:\Users\Lenovo\Desktop\NEws\Pong-SAM-Scalajs2\src\main\scala\Action.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m[naha] 	notify, wait, loop, $asInstanceOf, equals, computeScore, asInstanceOf, synchronized, $isInstanceOf, load, endGame, notifyAll, isInstanceOf, <init>, ==, clone, counter, toString, !=, getClass, ne, Action, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0m[naha] All member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
+[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
+[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
