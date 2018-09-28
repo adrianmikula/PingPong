@@ -14,16 +14,22 @@
     <div id="start-message">
         press any key to start
         <br/>
-        move &#8592; &#8594;
+        Player 1 keys: &#8592; &#8594;
+        <br/>
+        Player 2 keys: A D
     </div>
     <div id="game-over">
         game over
         <br/>
         press F5 to play again
     </div>
+    <div id="pause-message">
+        press Esc to continue
+    </div>
     <div id="ball"></div>
-    <div id="racket1"></div>
-    <div id="racket2"></div>
+    <div class="racket" id="racket1"></div>
+    <div class="racket" id="racket2"></div>
+    <div id="debug">debug</div>
 </div>
 
 <script type="text/javascript" src="./target/scala-2.12/pong-sam-scalajs2-fastopt.js"></script>
@@ -34,9 +40,11 @@
           ballHTML       = document.getElementById('ball'),
           scoreHTML      = document.getElementById('score'),
           startHTML      = document.getElementById('start-message'),
+          pauseHTML   = document.getElementById('pause-message');
           gameOverHTML   = document.getElementById('game-over');
-          var rackets      = [racket1, racket2];
-          pong.Game().startPong(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, gameOverHTML)
+          debugHTML   = document.getElementById('debug');
+          var rackets      = [racketHTML1, racketHTML2];
+          pong.Game().startPong(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, debugHTML)
 </script>
 
 </body>

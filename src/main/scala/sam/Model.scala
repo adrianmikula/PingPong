@@ -1,6 +1,6 @@
 package sam
 
-import components.{Ball, Movement, Player}
+import components.{Ball, Movement, Paddle, Player}
 
 object Model {
 
@@ -15,22 +15,32 @@ object Model {
     player.paddle.motion = new Movement(0,0)
   }
 
-  def movePaddles (): Unit =
+
+  def movePaddle (paddle:Paddle, motion:Movement): Unit =
   {
-    for (player <- Player.players) {
-      player.paddle.x += player.paddle.motion.x
-      player.paddle.y += player.paddle.motion.y
+    if (paddle.isWithinBounds(motion))
+    {
+      paddle.x += paddle.motion.x
+      paddle.y += paddle.motion.y
     }
   }
+
+//  def movePaddles (): Unit =
+//  {
+//    for (player <- Player.players) {
+//      player.paddle.x += player.paddle.motion.x
+//      player.paddle.y += player.paddle.motion.y
+//    }
+//  }
 
   def bounceBall (x:Boolean, y:Boolean): Unit =
   {
     if (x) {
-      Ball.motion.x *= -1
+      Ball.bounceX()
     }
     if (y)
     {
-      Ball.motion.y *= -1
+      Ball.bounceY()
     }
   }
 

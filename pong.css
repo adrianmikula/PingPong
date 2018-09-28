@@ -23,7 +23,7 @@ body { font-family: sans-serif; }
   border-radius: 15px;
 }
 
-#racket {
+.racket {
   background: yellow;
   left: 110px;
   top: 360px;
@@ -32,7 +32,7 @@ body { font-family: sans-serif; }
   height: 20px;
 }
 
-#start-message, #game-over {
+#start-message, #game-over, #pause-message {
   color: yellow;
   position: absolute;
   top: 50%;
@@ -41,4 +41,25 @@ body { font-family: sans-serif; }
   font-weight: bold;
 }
 
-#game-over { display: none; }
+
+#game-over, #pause-message {
+  color: black;
+  background-color: red;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%
+  height: 50%
+  text-align: center;
+  font-weight: bold;
+}
+
+
+#debug {
+  color: orange;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+#game-over, #pause-message { display: none; }

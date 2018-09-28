@@ -2,10 +2,13 @@ package sam
 
 import components.{Ball, Movement, Player}
 import org.scalajs.dom.{KeyboardEvent, document}
+import pong.{Game, Settings}
 
-import scala.scalajs.js.timers.RawTimers
+import scala.scalajs.js.timers.{RawTimers, SetIntervalHandle}
 
 object Action {
+
+  var handles :Set[SetIntervalHandle] =  Set()
 
   def listenToKeys(): Unit =
   {
@@ -34,28 +37,65 @@ object Action {
       State.startGame()
     }
     document.addEventListener("keydown", startGame)
-  }
 
-  def timerLoop(): Unit =
-  {
-    val executeLoop = () => {
-      moveObjects()
 
+
+    // add event listener for pausing game
+    var pauseGame = (evt: KeyboardEvent) => {
+      if (evt.keyCode == Game.Key.Esc) {
+        State.pauseOrContinueGame()
+      }
     }
-    RawTimers.setInterval(executeLoop, 16)
-
+    document.addEventListener("keydown", pauseGame)
   }
 
-  def moveObjects(): Unit =
+
+  def startTimer(): Unit =
+  {
+    if (State.isRunning) {
+
+      val executeLoop = () => {
+        updateModel()
+        updateStateAndView()
+      }
+
+      handles += RawTimers.setInterval(executeLoop, Settings.refreshRate)
+    }
+  }
+
+  def stopTimer(): Unit =
+  {
+    for (handle <- handles)
+      RawTimers.clearInterval(handle)
+
+    //TODO empty handlers set
+  }
+
+  def updateModel(): Unit =
   {
     // move player's paddles
-    Model.movePaddles()
+    //Model.movePaddles()
+
+    for (player <- Player.players) {
+      {
+        Model.movePaddle(player.paddle, player.paddle.motion)
+      }
+    }
 
     // move ball
     Model.moveBall()
+  }
+
+  def updateStateAndView(): Unit =
+  {
+    // clear the bounce flags from the last cycle
+    Ball.resetBounceFlags()
 
     // now update the state
     State.checkForCollisions()
+
+    // now refresh the view
+    View.render()
   }
 
   def bounceBall(x:Boolean, y:Boolean): Unit =

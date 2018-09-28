@@ -3,7 +3,7 @@ package pong
 import org.scalajs.dom.html.Div
 
 import scala.collection.mutable.Map
-import scala.scalajs.js.annotation.JSExport
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 import components._
 import sam._
 
@@ -17,7 +17,7 @@ object Game {
     * following values :Stopped , Running and Game over
     */
   object Status extends Enumeration {
-    var Stopped, Running, GameOver = Value
+    var Stopped, Running, Paused, GameOver = Value
   }
 
   object Side extends Enumeration {
@@ -27,8 +27,8 @@ object Game {
   object Bounds {
     val top = 0
     val left = 0
-    val right = 400
-    val bottom = 300
+    val right = 300
+    val bottom = 400
   }
 
   /**
@@ -91,28 +91,31 @@ object Game {
     * @param gameOverHTML
     */
   @JSExport
-  def startPong(playgroundHTML: Div, rackets: Array[Div], ballHTML: Div, scoreHTML: Div, startHTML: Div, gameOverHTML: Div): Unit = {
-    val arrowKeys = collection.Map(Key.Left -> new Movement(-1, 0), Key.Right -> new Movement(1, 0))
+  def startPong(playgroundHTML: Div, rackets: scala.scalajs.js.Array[Div], ballHTML: Div, scoreHTML: Div, startHTML: Div, pauseHTML: Div, gameOverHTML: Div, debugHTML: Div ): Unit =
+  {
+    //TODO initialise View in a safer way
+    new View(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, debugHTML)
+
+    var moveLeft = new Movement(-1 * Settings.paddleSpeed, 0)
+    var moveRight = new Movement(1 * Settings.paddleSpeed, 0)
+
+    val arrowKeys = collection.Map(Key.Left -> moveLeft, Key.Right -> moveRight)
     Player.players += new Player("Player 1", arrowKeys, Side.Top)
 
-    val wasdKeys = collection.Map(Key.A -> new Movement(-1, 0), Key.D -> new Movement(1, 0))
+    val wasdKeys = collection.Map(Key.A -> moveLeft, Key.D -> moveRight)
     Player.players += new Player("Player 2", wasdKeys, Side.Bottom)
 
     Ball.x = (Bounds.left + Bounds.right)/2
     Ball.y = (Bounds.top + Bounds.bottom)/2
 
-//    for (player <- Player.players)
-//    {
-//      for (key <- player.keys)
-//      {
-//        State.pressedKeys(key) = false
-//      }
-//    }
+    // update the size of the HTML elements
+    View.view.resize()
 
-    new View(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, gameOverHTML)
+    // register keyboard event listeners
     Action.listenToKeys()
   }
 
-  def main(args: Array[String]): Unit = {}
+  def main(args: Array[String]): Unit = {
+  }
 }
 
