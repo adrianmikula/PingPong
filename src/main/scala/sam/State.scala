@@ -9,7 +9,7 @@ import sam.Action.startTimer
 object State {
 
   var score:Array[Int] = Array[Int](0,0)
-  var pressedKeys:Map[Int,Boolean] = Map()
+  var pressedKeys:scala.collection.mutable.Map[Int,Boolean] = scala.collection.mutable.Map()
 
   /**
     * Checks if the game is stopped or not
@@ -27,28 +27,39 @@ object State {
 
   def isCountDown: Boolean = status == Status.CountDown
 
-
-  def randomiseGame(): Unit = {
-
-    // randomise the size of the playing field
-    Bounds.right = scala.util.Random.nextInt(200) + 300
-    Bounds.bottom = scala.util.Random.nextInt(200) + 300
-
-    // shift the ball and paddles back to the centre
-    Ball.ball = new Ball()
-    for (player <- Player.players) {
-      player.resetPaddle()
-    }
-
-    // launch the ball in a random direction at the start
-    Ball.ball.randomiseMotion()
-
+  def pressKey(key:Int): Unit =
+  {
+    pressedKeys(key) = true
   }
 
-  def increaseDifficulty(): Unit = {
-    Settings.ballSpeed += 0.5
-    Settings.paddleSpeed += 2.5
-    Settings.ballSpin += 0.05
+  def releaseKey(key:Int): Unit =
+  {
+    pressedKeys(key) = false
+  }
+
+  def updatePaddleMotion(pressed:Int): Unit =
+  {
+    // find the players who use this key
+    for (player <- Player.players)
+    {
+      if (player.keys.contains(pressed))
+      {
+        // sum the motion for all pressed keys
+        player.paddle.motion = new Movement(0,0)
+        for ((key, motion) <- player.keys)
+        {
+          if (State.isPressed(key)) {
+            player.paddle.motion.x += motion.x
+            player.paddle.motion.y += motion.y
+          }
+        }
+      }
+    }
+  }
+
+  def isPressed(key:Int): Boolean =
+  {
+     pressedKeys.contains(key) && pressedKeys(key)
   }
 
   def startGame(): Unit =
@@ -64,10 +75,10 @@ object State {
 
        if (Settings.increaseDifficulty)
          {
-           increaseDifficulty()
+           Model.increaseDifficulty()
          }
 
-       randomiseGame()
+       Model.randomiseGame()
 
        // update status and view elements
        View.view.hideWelcome()

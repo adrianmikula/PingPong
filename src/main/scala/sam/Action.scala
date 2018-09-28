@@ -18,14 +18,18 @@ object Action {
 
       val markAsPressed = (evt: KeyboardEvent) => {
         if (player.keys.contains(evt.keyCode)) {
-          player.paddle.motion = player.keys(evt.keyCode)
+          State.pressKey(evt.keyCode)
+          State.updatePaddleMotion(evt.keyCode)
+          //player.paddle.motion = player.keys(evt.keyCode)
         }
       }
       document.addEventListener("keydown", markAsPressed)
 
       val markAsNotPressed = (evt: KeyboardEvent) => {
         if (player.keys.contains(evt.keyCode)) {
-          player.paddle.motion = new Movement(0,0)
+          State.releaseKey(evt.keyCode)
+          State.updatePaddleMotion(evt.keyCode)
+          //player.paddle.motion = new Movement(0,0)
         }
       }
       document.addEventListener("keyup", markAsNotPressed)

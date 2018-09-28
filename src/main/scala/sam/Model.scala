@@ -1,6 +1,8 @@
 package sam
 
 import components.{Ball, Movement, Paddle, Player}
+import pong.Game.Bounds
+import pong.Settings
 
 object Model {
 
@@ -48,6 +50,39 @@ object Model {
   {
     Ball.ball.x = (Ball.ball.x + Ball.ball.motion.x).toInt
     Ball.ball.y = (Ball.ball.y + Ball.ball.motion.y).toInt
+  }
+
+
+  def randomiseGame(): Unit = {
+
+    // randomise the size of the playing field
+    Bounds.right = scala.util.Random.nextInt(200) + 300
+    Bounds.bottom = scala.util.Random.nextInt(200) + 300
+
+    // shift the ball and paddles back to the centre
+    Ball.ball = new Ball()
+    for (player <- Player.players) {
+      player.resetPaddle()
+    }
+
+    // launch the ball in a random direction at the start
+    Ball.ball.randomiseMotion()
+
+  }
+
+  def increaseDifficulty(): Unit = {
+    Settings.ballSpeed += 0.3
+    //Settings.paddleSpeed += 0.5
+    Settings.ballSpin += 0.05
+
+    // update the paddle speeds
+    for (player <- Player.players) {
+      for ((key, motion) <- player.keys)
+      {
+        motion.x *= 1.05
+        motion.y *= 1.05
+      }
+    }
   }
 
 

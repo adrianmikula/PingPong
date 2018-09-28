@@ -6,7 +6,7 @@ object Settings {
   val ballRadius = 20
   var ballSpin = 0.25
 
-  var paddleSpeed = 5.0
+  var paddleSpeed = 3.0
   val paddleBreadth = 20
   val paddleLength = 100
 
