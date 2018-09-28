@@ -6,7 +6,7 @@ import pong.Settings
 //class Ball (var x : Int, var y : Int) {
 class Ball (var x:Int=Bounds.right/2, var y:Int=Bounds.bottom/2, val motion:Movement = new Movement()) {
 
-    val speed = Settings.ballSpeed
+    var speed = Settings.ballSpeed
     val radius:Int = Settings.ballRadius
     var hasBounced = Array(false, false)
 
@@ -35,7 +35,7 @@ class Ball (var x:Int=Bounds.right/2, var y:Int=Bounds.bottom/2, val motion:Move
 
     def nextPosition() : Ball =
     {
-        (new Ball(this.x + this.motion.x, this.y + this.motion.y, this.motion))
+        (new Ball((this.x + this.motion.x).toInt, (this.y + this.motion.y).toInt, this.motion))
     }
 
     def randomiseMotion(): Unit =

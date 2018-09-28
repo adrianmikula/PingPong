@@ -35,7 +35,7 @@ object Action {
     // add event listener for starting game
     var startOrPauseGame = (evt: KeyboardEvent) => {
       if (evt.keyCode == Game.Key.Enter) {
-        State.startGame()
+        State.prepareGame()
       }
       if (evt.keyCode == Game.Key.Esc) {
         State.pauseOrContinueGame()
@@ -45,6 +45,24 @@ object Action {
 
   }
 
+  def countDown(counter:Int): Unit =
+  {
+    View.view.refreshCountDown(counter)
+
+    if (State.isCountDown) {
+      if (counter == 0)
+      {
+        State.startGame()
+      }
+      else
+      {
+        val countLoop = () => {
+          countDown(counter - 1)
+        }
+        RawTimers.setTimeout(countLoop, 1000)
+      }
+    }
+  }
 
   def startTimer(): Unit =
   {

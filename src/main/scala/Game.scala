@@ -17,7 +17,7 @@ object Game {
     * following values :Stopped , Running and Game over
     */
   object Status extends Enumeration {
-    var Stopped, Running, Paused = Value
+    var Stopped, Running, Paused, CountDown = Value
   }
 
   object Side extends Enumeration {
@@ -27,8 +27,8 @@ object Game {
   object Bounds {
     val top = 0
     val left = 0
-    val right = 300
-    val bottom = 400
+    var right = 300
+    var bottom = 400
   }
 
   /**
@@ -94,10 +94,10 @@ object Game {
     * @param gameOverHTML
     */
   @JSExport
-  def startPong(playgroundHTML: Div, rackets: scala.scalajs.js.Array[Div], ballHTML: Div, scoreHTML: Div, startHTML: Div, pauseHTML: Div, gameOverHTML: Div, debugHTML: Div ): Unit =
+  def startPong(playgroundHTML: Div, rackets: scala.scalajs.js.Array[Div], ballHTML: Div, scoreHTML: Div, startHTML: Div, pauseHTML: Div, gameOverHTML: Div, countdownHTML: Div ): Unit =
   {
     //TODO initialise View in a safer way
-    new View(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, debugHTML)
+    new View(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, countdownHTML)
 
     var moveLeft = new Movement(-1 * Settings.paddleSpeed, 0)
     var moveRight = new Movement(1 * Settings.paddleSpeed, 0)
@@ -109,7 +109,7 @@ object Game {
     Player.players += new Player("Player 2", wasdKeys, Side.Bottom)
 
     // update the size of the HTML elements
-    View.view.resize()
+    View.view.resizeObjects()
 
     // register keyboard event listeners
     Action.listenToKeys()

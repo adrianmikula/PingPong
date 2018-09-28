@@ -1,5 +1,5 @@
 package components
 
-class Movement (var x:Int=0, var y:Int=0) {
+class Movement (var x:Double=0, var y:Double=0) {
 
 }

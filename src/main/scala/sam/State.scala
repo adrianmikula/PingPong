@@ -3,6 +3,8 @@ package sam
 import com.sun.javafx.image.impl.IntArgb.ToIntArgbPreConv
 import components.{Ball, Movement, Player}
 import pong.Game.{Bounds, Side, Status, status}
+import pong.Settings
+import sam.Action.startTimer
 
 object State {
 
@@ -23,28 +25,61 @@ object State {
 
   def isPaused: Boolean = status == Status.Paused
 
+  def isCountDown: Boolean = status == Status.CountDown
+
+
+  def randomiseGame(): Unit = {
+
+    // randomise the size of the playing field
+    Bounds.right = scala.util.Random.nextInt(200) + 300
+    Bounds.bottom = scala.util.Random.nextInt(200) + 300
+
+    // shift the ball and paddles back to the centre
+    Ball.ball = new Ball()
+    for (player <- Player.players) {
+      player.resetPaddle()
+    }
+
+    // launch the ball in a random direction at the start
+    Ball.ball.randomiseMotion()
+
+  }
+
+  def increaseDifficulty(): Unit = {
+    Settings.ballSpeed += 0.5
+    Settings.paddleSpeed += 2.5
+    Settings.ballSpin += 0.05
+  }
 
   def startGame(): Unit =
   {
+    status = Status.Running
+    View.view.hideCountDown()
+    Action.startTimer()
+  }
+
+  def prepareGame(): Unit =
+  {
      if (isStoped) {
 
-       // shift the ball and paddles back to the centre
-       Ball.ball = new Ball()
-       for (player <- Player.players) {
-         player.paddle.x = player.paddle.centreX
-         player.paddle.y = player.paddle.centreY
-       }
+       if (Settings.increaseDifficulty)
+         {
+           increaseDifficulty()
+         }
 
-       // launch the ball in a random direction at the start
-       Ball.ball.randomiseMotion()
+       randomiseGame()
 
        // update status and view elements
        View.view.hideWelcome()
        View.view.hideResult()
-       status = Status.Running
+       View.view.resizeBounds()
+       View.view.drawBall()
+       View.view.drawRackets()
+       status = Status.CountDown
 
        // start timer
-       Action.startTimer()
+       View.view.showCountDown()
+       Action.countDown(Settings.countDownSeconds)
       }
 
   }

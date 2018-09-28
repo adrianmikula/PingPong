@@ -2,13 +2,15 @@ package pong
 
 object Settings {
 
-  var ballSpeed = 3
-  var ballRadius = 20
+  var ballSpeed = 2.0
+  val ballRadius = 20
   var ballSpin = 0.25
 
-  var paddleSpeed = 5
-  var paddleBreadth = 20
-  var paddleLength = 100
+  var paddleSpeed = 5.0
+  val paddleBreadth = 20
+  val paddleLength = 100
 
-  var refreshRate = 16
+  val countDownSeconds = 3
+  val refreshRate = 16
+  val increaseDifficulty = true
 }

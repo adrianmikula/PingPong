@@ -29,7 +29,7 @@
     <div id="ball"></div>
     <div class="racket" id="racket1"></div>
     <div class="racket" id="racket2"></div>
-    <div id="debug"></div>
+    <div id="countdown"></div>
 </div>
 
 <script type="text/javascript" src="./target/scala-2.12/pong-sam-scalajs2-fastopt.js"></script>
@@ -42,9 +42,9 @@
           startHTML      = document.getElementById('start-message'),
           pauseHTML   = document.getElementById('pause-message');
           gameOverHTML   = document.getElementById('game-over');
-          debugHTML   = document.getElementById('debug');
+          countdownHTML   = document.getElementById('countdown');
           var rackets      = [racketHTML1, racketHTML2];
-          pong.Game().startPong(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, debugHTML)
+          pong.Game().startPong(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, countdownHTML)
 </script>
 
 </body>

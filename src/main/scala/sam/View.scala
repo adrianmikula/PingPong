@@ -3,14 +3,15 @@ package sam
 import components.{Ball, Player}
 import org.scalajs.dom.html.Div
 import pong.Game.Bounds
+import pong.Settings
 
 
-class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div], val ballHTML: Div, val scoreHTML: Div, val startHTML: Div,val pauseHTML: Div, val gameOverHTML: Div, val debugHTML: Div)
+class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div], val ballHTML: Div, val scoreHTML: Div, val startHTML: Div,val pauseHTML: Div, val gameOverHTML: Div, val countdownHTML: Div)
   {
 
   View.view = this
 
-    def resize(): Unit =
+    def resizeObjects(): Unit =
     {
       // resize the rackets
       for (player <- Player.players) {
@@ -22,6 +23,12 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
       View.view.ballHTML.style.width = Ball.ball.radius*2 + "px"
       View.view.ballHTML.style.height = Ball.ball.radius*2 + "px"
       View.view.ballHTML.style.borderRadius = Ball.ball.radius + "px"
+    }
+
+    def resizeBounds(): Unit =
+    {
+      View.view.playgroundHTML.style.width = Bounds.right + "px"
+      View.view.playgroundHTML.style.height = Bounds.bottom + "px"
     }
 
 
@@ -91,6 +98,20 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
       pauseHTML.style.display = "none"
     }
 
+    def showCountDown() = {
+      countdownHTML.innerHTML = ""
+      countdownHTML.style.display = "block"
+    }
+
+    def hideCountDown(): Unit =
+    {
+      countdownHTML.style.display = "none"
+    }
+
+    def refreshCountDown(counter:Int): Unit =
+    {
+      countdownHTML.innerHTML = "Starting in " + counter
+    }
 }
 
 
@@ -107,10 +128,5 @@ object View {
     //View.view.drawEndGame(false)
   }
 
-  @deprecated
-  def debug(message: String): Unit =
-  {
-    view.debugHTML.innerHTML = message
-  }
 }
 

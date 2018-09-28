@@ -20,8 +20,8 @@ object Model {
   {
     if (paddle.isWithinBounds(motion))
     {
-      paddle.x += paddle.motion.x
-      paddle.y += paddle.motion.y
+      paddle.x = (paddle.x + paddle.motion.x).toInt
+      paddle.y = (paddle.y + paddle.motion.y).toInt
     }
   }
 
@@ -46,8 +46,8 @@ object Model {
 
   def moveBall (): Unit =
   {
-    Ball.ball.x += Ball.ball.motion.x
-    Ball.ball.y += Ball.ball.motion.y
+    Ball.ball.x = (Ball.ball.x + Ball.ball.motion.x).toInt
+    Ball.ball.y = (Ball.ball.y + Ball.ball.motion.y).toInt
   }
 
 
