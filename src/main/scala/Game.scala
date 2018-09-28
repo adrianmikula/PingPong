@@ -17,7 +17,7 @@ object Game {
     * following values :Stopped , Running and Game over
     */
   object Status extends Enumeration {
-    var Stopped, Running, Paused, GameOver = Value
+    var Stopped, Running, Paused = Value
   }
 
   object Side extends Enumeration {
@@ -41,6 +41,9 @@ object Game {
     val A = 65
     val D = 68
     val Esc = 27
+
+    //TODO use official key constants
+    val Enter = org.scalajs.dom.ext.KeyCode.Enter
   }
 
   import Status._
@@ -104,9 +107,6 @@ object Game {
 
     val wasdKeys = collection.Map(Key.A -> moveLeft, Key.D -> moveRight)
     Player.players += new Player("Player 2", wasdKeys, Side.Bottom)
-
-    Ball.x = (Bounds.left + Bounds.right)/2
-    Ball.y = (Bounds.top + Bounds.bottom)/2
 
     // update the size of the HTML elements
     View.view.resize()

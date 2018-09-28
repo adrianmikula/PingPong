@@ -19,9 +19,9 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
       }
 
       // resize the ball
-      View.view.ballHTML.style.width = Ball.radius*2 + "px"
-      View.view.ballHTML.style.height = Ball.radius*2 + "px"
-      View.view.ballHTML.style.borderRadius = Ball.radius + "px"
+      View.view.ballHTML.style.width = Ball.ball.radius*2 + "px"
+      View.view.ballHTML.style.height = Ball.ball.radius*2 + "px"
+      View.view.ballHTML.style.borderRadius = Ball.ball.radius + "px"
     }
 
 
@@ -31,8 +31,8 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
     */
   def drawBall() {
 
-    ballHTML.style.left = Ball.x - Ball.radius + "px"
-    ballHTML.style.top = Ball.y - Ball.radius  + "px"
+    ballHTML.style.left = Ball.ball.x - Ball.ball.radius + "px"
+    ballHTML.style.top = Ball.ball.y - Ball.ball.radius  + "px"
   }
 
 
@@ -67,17 +67,29 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
     * @param gameOverHTML
     * @param isOver
     */
-  def drawEndGame(endMessage:String) = {
+  def showResult(endMessage:String) = {
     gameOverHTML.innerHTML = endMessage
     gameOverHTML.style.display = "block"
   }
 
+    def hideResult(): Unit =
+    {
+      gameOverHTML.style.display = "none"
+    }
 
     def hideWelcome(): Unit =
     {
       startHTML.style.display = "none"
     }
 
+    def showPause() = {
+      pauseHTML.style.display = "block"
+    }
+
+
+    def hidePause() = {
+      pauseHTML.style.display = "none"
+    }
 
 }
 
@@ -95,6 +107,7 @@ object View {
     //View.view.drawEndGame(false)
   }
 
+  @deprecated
   def debug(message: String): Unit =
   {
     view.debugHTML.innerHTML = message

@@ -33,20 +33,16 @@ object Action {
     }
 
     // add event listener for starting game
-    var startGame = (_: KeyboardEvent) => {
-      State.startGame()
-    }
-    document.addEventListener("keydown", startGame)
-
-
-
-    // add event listener for pausing game
-    var pauseGame = (evt: KeyboardEvent) => {
+    var startOrPauseGame = (evt: KeyboardEvent) => {
+      if (evt.keyCode == Game.Key.Enter) {
+        State.startGame()
+      }
       if (evt.keyCode == Game.Key.Esc) {
         State.pauseOrContinueGame()
       }
     }
-    document.addEventListener("keydown", pauseGame)
+    document.addEventListener("keydown", startOrPauseGame)
+
   }
 
 
@@ -73,35 +69,39 @@ object Action {
 
   def updateModel(): Unit =
   {
-    // move player's paddles
-    //Model.movePaddles()
+    // clear the bounce flags from the last cycle
+    Ball.ball.resetBounceFlags()
 
-    for (player <- Player.players) {
-      {
-        Model.movePaddle(player.paddle, player.paddle.motion)
-      }
-    }
+    // check for collisions with the intended ball position
+    State.checkForCollisions(Ball.ball.nextPosition())
 
     // move ball
     Model.moveBall()
+
+    // move player paddles
+    for (player <- Player.players) {
+      Model.movePaddle(player.paddle, player.paddle.motion)
+
+    }
+
   }
 
   def updateStateAndView(): Unit =
   {
-    // clear the bounce flags from the last cycle
-    Ball.resetBounceFlags()
-
-    // now update the state
-    State.checkForCollisions()
+//    // clear the bounce flags from the last cycle
+//    Ball.ball.resetBounceFlags()
+//
+//    // check for collisions with the intended ball position
+//    State.checkForCollisions(Ball.ball.nextPosition())
 
     // now refresh the view
     View.render()
   }
 
-  def bounceBall(x:Boolean, y:Boolean): Unit =
+  def bounceBall(x:Boolean, y:Boolean, motion:Movement): Unit =
   {
     // bounce ball off a surface
-    Model.bounceBall(x, y)
+    Model.bounceBall(x, y, motion)
   }
 
 }

@@ -2,20 +2,24 @@ package components
 
 import pong.Game.Bounds
 
-abstract class Rectangle (var x:Int, var y:Int, var width:Int, var height:Int)
+abstract class Rectangle (var x:Int, var y:Int, val width:Int, val height:Int)
 {
 //  var x :Int
 //  var y : Int
 //  val width:Int
 //  val height: Int
 
+//  def touchesBall(ball:Ball): (Boolean) =
+//  {
+//    var (x, y) = touchesBallXY(ball)
+//    (x || y)
+//  }
 
-
-  def touchesBall(): Boolean =
+  def touchesBall(ball:Ball): Boolean =
   {
     // find out the x and y distances seperately
-    var xdiff = Ball.x - this.x
-    var ydiff = Ball.y - this.y
+    var xdiff = ball.x - this.x
+    var ydiff = ball.y - this.y
 
     // convert the results into positive numbers
     if (xdiff < 0) xdiff *= -1
@@ -24,10 +28,14 @@ abstract class Rectangle (var x:Int, var y:Int, var width:Int, var height:Int)
     // use an approximation for now
     // TODO implement a precise collision calculation
 
-    var intersectsX = (xdiff <= width/2 + Ball.radius)
-    var intersectsY = (ydiff <= height/2 + Ball.radius)
+    var intersectsX = (xdiff <= width/2 + ball.radius)
+    var intersectsY = (ydiff <= height/2 + ball.radius)
 
     (intersectsX && intersectsY)
+
+//    var touchesX = intersectsX && intersectsY && xdiff < width/2
+//    var touchesY = intersectsX && intersectsY && ydiff < height/2
+//    (intersectsX, intersectsY)
   }
 
   def isWithinBounds(motion: Movement):Boolean=

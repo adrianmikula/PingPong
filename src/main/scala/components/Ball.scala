@@ -1,31 +1,29 @@
 package components
 
+import pong.Game.Bounds
 import pong.Settings
 
 //class Ball (var x : Int, var y : Int) {
-object Ball {
+class Ball (var x:Int=Bounds.right/2, var y:Int=Bounds.bottom/2, val motion:Movement = new Movement()) {
 
     val speed = Settings.ballSpeed
-    var x : Int = 0
-    var y : Int = 0
     val radius:Int = Settings.ballRadius
-    val startX = (scala.util.Random.nextInt(2) * 2 - 1) * speed
-    val startY = (scala.util.Random.nextInt(2) * 2 - 1) * speed
-    val motion = new Movement(startX, startY)
     var hasBounced = Array(false, false)
 
-    def bounceX(): Unit = {
+    def bounceX(cause:Movement): Unit = {
         if (!hasBounced(0))
         {
-            Ball.motion.x *= -1
+            this.motion.x *= -1
+            this.motion.y += (cause.y * Settings.ballSpin).toInt
             hasBounced(0) = true
         }
     }
 
-    def bounceY(): Unit = {
+    def bounceY(cause:Movement): Unit = {
         if (!hasBounced(1))
         {
-            Ball.motion.y *= -1
+            this.motion.y *= -1
+            this.motion.x += (cause.x * Settings.ballSpin).toInt
             hasBounced(1) = true
         }
     }
@@ -35,9 +33,23 @@ object Ball {
         hasBounced(1) = false
     }
 
+    def nextPosition() : Ball =
+    {
+        (new Ball(this.x + this.motion.x, this.y + this.motion.y, this.motion))
+    }
+
+    def randomiseMotion(): Unit =
+    {
+        this.motion.x = (scala.util.Random.nextInt(2) * 2 - 1) * speed
+        this.motion.y = (scala.util.Random.nextInt(2) * 2 - 1) * speed
+    }
+
 }
 
-//object Ball
-//{
+object Ball
+{
+    // TODO add multi-ball support
     //var balls : collection.mutable.Set[Ball] = collection.mutable.Set()
-//}
+
+    var ball = new Ball()
+}

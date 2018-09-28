@@ -33,21 +33,21 @@ object Model {
 //    }
 //  }
 
-  def bounceBall (x:Boolean, y:Boolean): Unit =
+  def bounceBall (x:Boolean, y:Boolean, motion:Movement): Unit =
   {
     if (x) {
-      Ball.bounceX()
+      Ball.ball.bounceX(motion)
     }
     if (y)
     {
-      Ball.bounceY()
+      Ball.ball.bounceY(motion)
     }
   }
 
   def moveBall (): Unit =
   {
-    Ball.x += Ball.motion.x
-    Ball.y += Ball.motion.y
+    Ball.ball.x += Ball.ball.motion.x
+    Ball.ball.y += Ball.ball.motion.y
   }
 
 
