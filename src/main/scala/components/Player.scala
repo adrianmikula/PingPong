@@ -5,7 +5,7 @@ import pong.Game.Side._
 import sam.View
 
 
-class Player(val name:String, val keys:collection.Map[Int,Movement], val side:Side.Value) {
+class Player(val name:String, val keys:collection.Map[Int,AnimateObject], val side:Side.Value) {
 
   val id :Int = Player.getNextId()
   var paddle = snapToSide(side)

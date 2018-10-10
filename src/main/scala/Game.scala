@@ -1,5 +1,7 @@
 package pong
 
+import java.time.LocalDate
+
 import org.scalajs.dom.html.Div
 
 import scala.collection.mutable.Map
@@ -77,6 +79,8 @@ object Game {
     * Holds status for the game
     */
   var status = Stopped
+  var gameTime = 0
+  var localStartTime = LocalDate.now
   /**
     * Holds score
     */
@@ -99,8 +103,8 @@ object Game {
     //TODO initialise View in a safer way
     new View(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, countdownHTML)
 
-    var moveLeft = new Movement(-1 * Settings.paddleSpeed, 0)
-    var moveRight = new Movement(1 * Settings.paddleSpeed, 0)
+    var moveLeft = new AnimateObject(-1 * Settings.paddleSpeed, 0)
+    var moveRight = new AnimateObject(1 * Settings.paddleSpeed, 0)
 
     val arrowKeys = collection.Map(Key.Left -> moveLeft, Key.Right -> moveRight)
     Player.players += new Player("Player 1", arrowKeys, Side.Top)

@@ -1,6 +1,6 @@
 package sam
 
-import components.{Ball, Movement, Player}
+import components.{Ball, AnimateObject, Player}
 import org.scalajs.dom.{KeyboardEvent, document}
 import pong.{Game, Settings}
 
@@ -120,7 +120,7 @@ object Action {
     View.render()
   }
 
-  def bounceBall(x:Boolean, y:Boolean, motion:Movement): Unit =
+  def bounceBall(x:Boolean, y:Boolean, motion:AnimateObject): Unit =
   {
     // bounce ball off a surface
     Model.bounceBall(x, y, motion)

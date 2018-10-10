@@ -1,24 +1,24 @@
 package sam
 
-import components.{Ball, Movement, Paddle, Player}
+import components.{Ball, AnimateObject, Paddle, Player}
 import pong.Game.Bounds
 import pong.Settings
 
 object Model {
 
 
-  def startPaddle(player:Player, motion:Movement): Unit =
+  def startPaddle(player:Player, motion:AnimateObject): Unit =
   {
     player.paddle.motion = motion
   }
 
   def stopPaddle(player:Player): Unit =
   {
-    player.paddle.motion = new Movement(0,0)
+    player.paddle.motion = new AnimateObject(0,0)
   }
 
 
-  def movePaddle (paddle:Paddle, motion:Movement): Unit =
+  def movePaddle (paddle:Paddle, motion:AnimateObject): Unit =
   {
     if (paddle.isWithinBounds(motion))
     {
@@ -35,7 +35,7 @@ object Model {
 //    }
 //  }
 
-  def bounceBall (x:Boolean, y:Boolean, motion:Movement): Unit =
+  def bounceBall (x:Boolean, y:Boolean, motion:AnimateObject): Unit =
   {
     if (x) {
       Ball.ball.bounceX(motion)

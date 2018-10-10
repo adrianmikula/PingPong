@@ -1,7 +1,7 @@
 package sam
 
 import com.sun.javafx.image.impl.IntArgb.ToIntArgbPreConv
-import components.{Ball, Movement, Player}
+import components.{Ball, AnimateObject, Player}
 import pong.Game.{Bounds, Side, Status, status}
 import pong.Settings
 import sam.Action.startTimer
@@ -45,7 +45,9 @@ object State {
       if (player.keys.contains(pressed))
       {
         // sum the motion for all pressed keys
-        player.paddle.motion = new Movement(0,0)
+
+
+        player.paddle.motion = new AnimateObject(0,0)
         for ((key, motion) <- player.keys)
         {
           if (State.isPressed(key)) {
@@ -176,12 +178,12 @@ object State {
 
     // check for the ball hitting a vertical wall
       if (wasHit(Side.Left) || wasHit(Side.Right)) {
-        Action.bounceBall(true, false, new Movement())
+        Action.bounceBall(true, false, new AnimateObject())
       }
 
     // check for the ball hitting a horizontal wall
       if (wasHit(Side.Top) || wasHit(Side.Bottom)) {
-        Action.bounceBall(false, true, new Movement())
+        Action.bounceBall(false, true, new AnimateObject())
       }
 
   }
