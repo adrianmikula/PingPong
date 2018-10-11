@@ -97,7 +97,16 @@ object Game {
   def startPong(playgroundHTML: Div, rackets: scala.scalajs.js.Array[Div], ballHTML: Div, scoreHTML: Div, startHTML: Div, pauseHTML: Div, gameOverHTML: Div, countdownHTML: Div ): Unit =
   {
     //TODO initialise View in a safer way
-    new View(playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, countdownHTML)
+    //var racketsNonJSArray = Array(rackets(0), rackets(1))
+    View.view.playgroundHTML = Some(playgroundHTML)
+    View.view.racketHTML = Some(rackets)
+    View.view.ballHTML = Some(ballHTML)
+    View.view.scoreHTML = Some(scoreHTML)
+    View.view.startHTML = Some(startHTML)
+    View.view.pauseHTML = Some(pauseHTML)
+    View.view.gameOverHTML = Some(gameOverHTML)
+    View.view.countdownHTML = Some(countdownHTML)
+    //playgroundHTML, rackets, ballHTML, scoreHTML, startHTML, pauseHTML, gameOverHTML, countdownHTML)
 
     var moveLeft = new Movement(-1 * Settings.paddleSpeed, 0)
     var moveRight = new Movement(1 * Settings.paddleSpeed, 0)

@@ -117,7 +117,7 @@ object Action {
 //    State.checkForCollisions(Ball.ball.nextPosition())
 
     // now refresh the view
-    View.render()
+    View.view.render()
   }
 
   def bounceBall(x:Boolean, y:Boolean, motion:Movement): Unit =

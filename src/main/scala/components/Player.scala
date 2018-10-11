@@ -53,6 +53,7 @@ object Player
   private var nextId :Int = 0
   var sides: scala.collection.mutable.Map[Side.Value, Player] = scala.collection.mutable.Map()
 
+  // get a unique id for this player, stating from 0
   def getNextId() :Int=
   {
     val id :Int = nextId

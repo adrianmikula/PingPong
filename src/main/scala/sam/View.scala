@@ -6,29 +6,43 @@ import pong.Game.Bounds
 import pong.Settings
 
 
-class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div], val ballHTML: Div, val scoreHTML: Div, val startHTML: Div,val pauseHTML: Div, val gameOverHTML: Div, val countdownHTML: Div)
-  {
+class View (){
+  var playgroundHTML = None:Option[Div]
+  var  racketHTML = None : Option[scala.scalajs.js.Array[Div]]
+  var  ballHTML= None:Option[Div]
+  var  scoreHTML= None:Option[Div]
+  var  startHTML= None:Option[Div]
+  var pauseHTML= None:Option[Div]
+  var  gameOverHTML= None:Option[Div]
+  var  countdownHTML= None:Option[Div]
 
+
+
+  // provide a no-arg constructor for the singleton to use
+//  def this() {
+//    this(null, null, null, null, null, null, null, null)
+//  }
+//
   View.view = this
 
     def resizeObjects(): Unit =
     {
       // resize the rackets
       for (player <- Player.players) {
-        View.view.racketHTML(player.id).style.width = player.paddle.width + "px"
-        View.view.racketHTML(player.id).style.height = player.paddle.height + "px"
+        racketHTML.get(player.id).style.width = player.paddle.width + "px"
+        racketHTML.get(player.id).style.height = player.paddle.height + "px"
       }
 
       // resize the ball
-      View.view.ballHTML.style.width = Ball.ball.radius*2 + "px"
-      View.view.ballHTML.style.height = Ball.ball.radius*2 + "px"
-      View.view.ballHTML.style.borderRadius = Ball.ball.radius + "px"
+      ballHTML.get.style.width = Ball.ball.radius*2 + "px"
+      ballHTML.get.style.height = Ball.ball.radius*2 + "px"
+      ballHTML.get.style.borderRadius = Ball.ball.radius + "px"
     }
 
     def resizeBounds(): Unit =
     {
-      View.view.playgroundHTML.style.width = Bounds.right + "px"
-      View.view.playgroundHTML.style.height = Bounds.bottom + "px"
+      playgroundHTML.get.style.width = Bounds.right + "px"
+      playgroundHTML.get.style.height = Bounds.bottom + "px"
     }
 
 
@@ -38,8 +52,8 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
     */
   def drawBall() {
 
-    ballHTML.style.left = Ball.ball.x - Ball.ball.radius + "px"
-    ballHTML.style.top = Ball.ball.y - Ball.ball.radius  + "px"
+    ballHTML.get.style.left = Ball.ball.x - Ball.ball.radius + "px"
+    ballHTML.get.style.top = Ball.ball.y - Ball.ball.radius  + "px"
   }
 
 
@@ -52,8 +66,8 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
     */
   def drawRackets() {
     for (player <- Player.players) {
-      racketHTML(player.id).style.left = player.paddle.x - player.paddle.width/2 + "px"
-      racketHTML(player.id).style.top = player.paddle.y - player.paddle.height/2 + "px"
+      racketHTML.get(player.id).style.left = player.paddle.x - player.paddle.width/2 + "px"
+      racketHTML.get(player.id).style.top = player.paddle.y - player.paddle.height/2 + "px"
     }
 
   }
@@ -63,9 +77,9 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
     * @param scoreHTML
     */
   def drawScore() = {
-    scoreHTML.innerHTML = ""
+    scoreHTML.get.innerHTML = ""
     for (player <- Player.players) {
-      scoreHTML.innerHTML += "Player " + player.id + ": " + State.score(player.id).toString + "<br/>"
+      scoreHTML.get.innerHTML += "Player " + player.id + ": " + State.score(player.id).toString + "<br/>"
     }
   }
 
@@ -75,58 +89,60 @@ class View (val playgroundHTML: Div, var racketHTML: scala.scalajs.js.Array[Div]
     * @param isOver
     */
   def showResult(endMessage:String) = {
-    gameOverHTML.innerHTML = endMessage
-    gameOverHTML.style.display = "block"
+    gameOverHTML.get.innerHTML = endMessage
+    gameOverHTML.get.style.display = "block"
   }
 
     def hideResult(): Unit =
     {
-      gameOverHTML.style.display = "none"
+      gameOverHTML.get.style.display = "none"
     }
 
     def hideWelcome(): Unit =
     {
-      startHTML.style.display = "none"
+      startHTML.get.style.display = "none"
     }
 
     def showPause() = {
-      pauseHTML.style.display = "block"
+      pauseHTML.get.style.display = "block"
     }
 
 
     def hidePause() = {
-      pauseHTML.style.display = "none"
+      pauseHTML.get.style.display = "none"
     }
 
     def showCountDown() = {
-      countdownHTML.innerHTML = ""
-      countdownHTML.style.display = "block"
+      countdownHTML.get.innerHTML = ""
+      countdownHTML.get.style.display = "block"
     }
 
     def hideCountDown(): Unit =
     {
-      countdownHTML.style.display = "none"
+      countdownHTML.get.style.display = "none"
     }
 
     def refreshCountDown(counter:Int): Unit =
     {
-      countdownHTML.innerHTML = "Starting in " + counter
+      countdownHTML.get.innerHTML = "Starting in " + counter
     }
-}
-
-
-object View {
-  var view:View = null
 
   def render(): Unit =
   {
-    View.view.drawBall()
-    View.view.drawRackets()
-    View.view.drawScore()
+    drawBall()
+    drawRackets()
+    drawScore()
 
     // TODO handle end game
     //View.view.drawEndGame(false)
   }
+
+}
+
+
+// retain a singleton instance
+object View {
+   var view = new View()
 
 }
 
